@@ -76,9 +76,9 @@ export default function Landing() {
 
   const handleGetStarted = () => {
     if (user) {
-      navigate(createPageUrl("Dashboard"));
+      navigate("/Dashboard");
     } else {
-      navigate(createPageUrl("Dashboard"));
+      navigate("/Dashboard");
     }
   };
 
@@ -429,5 +429,6 @@ export default function Landing() {
     </div>
   );
 }
+
 
 

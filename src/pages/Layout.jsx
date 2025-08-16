@@ -51,7 +51,7 @@ const LandingHeader = () => {
         if (user) {
             navigate(createPageUrl("Dashboard"));
         } else {
-            navigate(createPageUrl("Landing"));
+            /* disabled redirect to Landing */;
         }
     };
 
@@ -128,7 +128,7 @@ const LandingFooter = () => (
         <div className="max-w-7xl mx-auto text-center flex items-center justify-between">
             <p className="text-white">© 2024 Blipp. All rights reserved.</p>
             <Button 
-                onClick={() => User.me().then(() => window.location.href = createPageUrl("Dashboard")).catch(() => navigate(createPageUrl("Landing")))}
+                onClick={() => navigate(createPageUrl("Dashboard"))}
                 className="bg-white text-blue-600 hover:bg-gray-50 font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
             >
                 Visit Your Dashboard
@@ -171,7 +171,7 @@ export default function Layout({ children, currentPageName }) {
         setAuthStatus("authorized");
       } catch (error) {
         setAuthStatus("unauthorized");
-        navigate(createPageUrl("Landing"));
+        /* disabled redirect to Landing */;
       }
     };
     
@@ -180,7 +180,7 @@ export default function Layout({ children, currentPageName }) {
 
   const handleLogout = async () => {
     await User.logout();
-    navigate(createPageUrl("Landing"));
+    /* disabled redirect to Landing */;
   };
   
   if (isLandingSitePage) {
@@ -232,6 +232,9 @@ export default function Layout({ children, currentPageName }) {
     </ThemeProvider>
   );
 }
+
+
+
 
 
 
