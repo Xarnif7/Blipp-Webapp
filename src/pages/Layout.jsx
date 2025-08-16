@@ -44,7 +44,7 @@ const LandingHeader = () => {
     const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {
+    useEffect(() => { if (AUTH_DISABLED) { setAuthStatus("public"); setIsLoading(false); return; }
   // TEMP short-circuit while we verify UI (remove this soon)
   if (AUTH_DISABLED) { 
     setAuthStatus("public"); 
@@ -167,7 +167,7 @@ export default function Layout({ children, currentPageName }) {
 
   const isLandingSitePage = ["Landing", "Features", "HowItWorks", "SimpleSetup", "Testimonials"].includes(currentPageName);
 
-  useEffect(() => { if (AUTH_DISABLED) { setAuthStatus("public"); setIsLoading(false); return; }
+  useEffect(() => { if (AUTH_DISABLED) { setAuthStatus("public"); setIsLoading(false); return; } if (AUTH_DISABLED) { setAuthStatus("public"); setIsLoading(false); return; }
     if (isLandingSitePage || ["CustomLogin", "Onboarding"].includes(currentPageName)) {
       setAuthStatus("public");
       return;
@@ -249,6 +249,7 @@ export default function Layout({ children, currentPageName }) {
     </ThemeProvider>
   );
 }
+
 
 
 
