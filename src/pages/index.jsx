@@ -50,7 +50,7 @@ import SimpleSetup from "./SimpleSetup";
 
 import Testimonials from "./Testimonials";
 
-import { HashRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, useLocation, Navigate, Link, useNavigate } from 'react-router-dom';
 
 const PAGES = {
     
@@ -179,9 +179,7 @@ function PagesContent() {
                 
                 <Route path="/SimpleSetup" element={<SimpleSetup />} />
                 
-                <Route path="/Testimonials" element={<Testimonials />} />
-                
-              <Route path="*" element={<Navigate to="/Landing" replace />} />`r`n      </Routes>
+                <Route path="/Testimonials" element={<Testimonials />} />`r`n      </Routes>
         </Layout>
     );
 }
@@ -193,6 +191,8 @@ export default function Pages() {
         </Router>
     );
 }
+
+
 
 
 
