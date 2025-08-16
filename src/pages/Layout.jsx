@@ -45,6 +45,11 @@ const LandingHeader = () => {
 
     useEffect(() => {
     if (AUTH_DISABLED) return;
+    if (isLandingSitePage || ["CustomLogin", "Onboarding"].includes(currentPageName)) {
+        setAuthStatus("public");
+        setIsLoading(false);
+        return;
+    }
     User.me().then(setUser).catch(() => setUser(null)).finally(() => setIsLoading(false));
 }, []);
 
@@ -233,6 +238,8 @@ export default function Layout({ children, currentPageName }) {
     </ThemeProvider>
   );
 }
+
+
 
 
 
