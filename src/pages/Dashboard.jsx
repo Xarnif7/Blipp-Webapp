@@ -196,7 +196,7 @@ export default function Dashboard() {
         <Card className="lg:col-span-2 transition-all duration-200 hover:shadow-md hover:-translate-y-[1px]">
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle>Recent Reviews</CardTitle>
-            <Button variant="ghost" size="sm" onClick={() => navigate(createPageUrl('ReviewInbox'))}>
+            <Button variant="ghost" size="sm" onClick={() => navigate('/')}>
               View all <ArrowRight className="w-4 h-4 ml-1" />
             </Button>
           </CardHeader>
@@ -244,3 +244,4 @@ export default function Dashboard() {
     </motion.div>
   );
 }
+

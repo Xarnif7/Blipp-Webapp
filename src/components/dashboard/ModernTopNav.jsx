@@ -44,9 +44,9 @@ export default function ModernTopNav({ onLogout }) {
   const { user } = useDashboard();
 
   const handleSwitchAccount = () => onLogout();
-  const goToProfile = () => navigate(createPageUrl('Settings'));
+  const goToProfile = () => navigate('/');
   const handleNotificationClick = (route) => navigate(createPageUrl(route));
-  const viewAllNotifications = () => navigate(createPageUrl('AuditLog'));
+  const viewAllNotifications = () => navigate('/');
     
   return (
     <header className="h-20 bg-white border-b border-slate-200 px-6 flex items-center justify-end z-40">
@@ -103,3 +103,4 @@ export default function ModernTopNav({ onLogout }) {
     </header>
   );
 }
+

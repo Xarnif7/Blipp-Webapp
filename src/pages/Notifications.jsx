@@ -189,7 +189,7 @@ export default function NotificationsPage() {
           <div className="flex gap-3">
             <Button 
               variant="outline" 
-              onClick={() => navigate(createPageUrl('AuditLog'))}
+              onClick={() => navigate('/')}
             >
               <ExternalLink className="w-4 h-4 mr-2" />
               View Audit Log
@@ -333,3 +333,4 @@ export default function NotificationsPage() {
     </div>
   );
 }
+

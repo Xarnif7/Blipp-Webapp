@@ -33,9 +33,9 @@ export default function HowItWorks() {
   const handleGetStarted = async () => {
     try {
       const user = await User.me();
-      navigate(createPageUrl("Dashboard"));
+      navigate("/Dashboard");
     } catch (error) {
-      navigate(createPageUrl("Dashboard"));
+      navigate("/Dashboard");
     }
   };
 
@@ -197,4 +197,5 @@ export default function HowItWorks() {
     </div>
   );
 }
+
 

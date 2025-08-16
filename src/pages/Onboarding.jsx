@@ -44,7 +44,7 @@ export default function OnboardingPage() { // Renamed from Onboarding
       });
 
       // Redirect to dashboard with a flag indicating onboarding is complete
-      navigate(createPageUrl("Dashboard?onboard=success"));
+      navigate("/Dashboard?onboard=success");
     } catch (error) {
       console.error("Error creating business:", error);
       // Optionally add user-facing error message here
@@ -189,3 +189,4 @@ export default function OnboardingPage() { // Renamed from Onboarding
     </div>
   );
 }
+
