@@ -60,7 +60,7 @@ const LandingHeader = () => {
             <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
                 <Link to={createPageUrl("Landing")} className="flex-shrink-0">
                     <img
-                        src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/0e243f198_NEWBLIPPLOGO.png"
+                        src="/dashboard"
                         alt="Blipp"
                         className="h-16 w-auto"
                     />
@@ -107,7 +107,7 @@ const LandingHeader = () => {
                                 </>
                             ) : (
                                 <>
-                                    <Button variant="ghost" onClick={() => User.login()} className="text-gray-700 hover:text-blue-600">
+                                    <Button variant="ghost" onClick={() => navigate(createPageUrl("Dashboard"))} className="text-gray-700 hover:text-blue-600">
                                         Sign In
                                     </Button>
                                     <Button onClick={handleAuthAction} className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300">
@@ -128,7 +128,7 @@ const LandingFooter = () => (
         <div className="max-w-7xl mx-auto text-center flex items-center justify-between">
             <p className="text-white">© 2024 Blipp. All rights reserved.</p>
             <Button 
-                onClick={() => User.me().then(() => window.location.href = createPageUrl("Dashboard")).catch(() => User.login())}
+                onClick={() => User.me().then(() => window.location.href = createPageUrl("Dashboard")).catch(() => navigate(createPageUrl("Landing")))}
                 className="bg-white text-blue-600 hover:bg-gray-50 font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
             >
                 Visit Your Dashboard
@@ -232,5 +232,7 @@ export default function Layout({ children, currentPageName }) {
     </ThemeProvider>
   );
 }
+
+
 
 

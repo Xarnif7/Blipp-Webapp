@@ -53,7 +53,7 @@ const BlippLogo = ({ collapsed }) => (
                 {!collapsed && (
                     <motion.img
                         key="logo-full"
-                        src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/0e243f198_NEWBLIPPLOGO.png"
+                        src="/dashboard"
                         alt="Blipp Logo"
                         className="h-16 w-auto"
                         initial={{ opacity: 0 }}
@@ -67,7 +67,7 @@ const BlippLogo = ({ collapsed }) => (
                 {collapsed && (
                      <motion.img
                         key="logo-collapsed"
-                        src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/0e243f198_NEWBLIPPLOGO.png"
+                        src="/dashboard"
                         alt="Blipp Logo"
                         className="h-12 w-auto"
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -211,3 +211,4 @@ export default function ModernSidebar() {
         </motion.aside>
     );
 }
+

@@ -78,7 +78,7 @@ export default function Landing() {
     if (user) {
       navigate(createPageUrl("Dashboard"));
     } else {
-      User.login();
+      navigate(createPageUrl("Dashboard"));
     }
   };
 
@@ -217,7 +217,7 @@ export default function Landing() {
                 </div>
                 <motion.div whileHover={{ scale: 1.05 }} transition={{ type: 'spring', stiffness: 300 }}>
                   <img 
-                    src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/3afb66987_image.png" 
+                    src="/dashboard" 
                     alt="Conversations Inbox Interface" 
                     className="rounded-2xl shadow-xl aspect-[4/3] object-cover w-full"
                   />
@@ -429,3 +429,5 @@ export default function Landing() {
     </div>
   );
 }
+
+

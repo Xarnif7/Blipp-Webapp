@@ -35,7 +35,7 @@ export default function HowItWorks() {
       const user = await User.me();
       navigate(createPageUrl("Dashboard"));
     } catch (error) {
-      User.login();
+      navigate(createPageUrl("Dashboard"));
     }
   };
 
@@ -197,3 +197,4 @@ export default function HowItWorks() {
     </div>
   );
 }
+
