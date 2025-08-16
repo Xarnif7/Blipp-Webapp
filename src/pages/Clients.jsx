@@ -7,11 +7,11 @@ import { Plus, Users, TrendingUp, UserCheck, Search, Upload } from "lucide-react
 import { motion } from "framer-motion";
 import { Client, Business } from "@/api/entities";
 import { useDashboard } from "@/components/providers/DashboardProvider";
-import ClientTable from "../components/clients/ClientTable";
-import ClientForm from "../components/clients/ClientForm";
-import CsvImportDialog from "../components/clients/CsvImportDialog";
+import ClientTable from ".@/components/clients/ClientTable";
+import ClientForm from ".@/components/clients/ClientForm";
+import CsvImportDialog from ".@/components/clients/CsvImportDialog";
 import PageHeader from "@/components/ui/PageHeader";
-import SendMessageModal from "../components/clients/SendMessageModal";
+import SendMessageModal from ".@/components/clients/SendMessageModal";
 import { toast } from "react-hot-toast";
 
 const kpiData = [
