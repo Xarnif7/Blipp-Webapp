@@ -1,10 +1,19 @@
 import React from "react";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { DashboardProvider } from "@/components/providers/DashboardProvider";
 
 /**
- * TEMP LAYOUT:
- * Minimal wrapper so pages render while we debug the original Layout.jsx.
- * Your original file is saved as Layout.jsx.fullbak.
+ * TEMP Layout (safe):
+ * - No redirects or auth logic
+ * - Just wraps children with Theme + Dashboard providers
+ * - Keeps everything rendering while we stabilize routing/auth
  */
 export default function Layout({ children }) {
-  return <>{children}</>;
+  return (
+    <ThemeProvider>
+      <DashboardProvider>
+        {children}
+      </DashboardProvider>
+    </ThemeProvider>
+  );
 }
