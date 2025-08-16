@@ -43,9 +43,10 @@ const LandingHeader = () => {
     const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(() => {`r`n  if (AUTH_DISABLED) return;`n  if (AUTH_DISABLED) return;
-        User.me().then(setUser).catch(() => setUser(null)).finally(() => setIsLoading(false));
-    }, []);
+    useEffect(() => {
+    if (AUTH_DISABLED) return;
+    User.me().then(setUser).catch(() => setUser(null)).finally(() => setIsLoading(false));
+}, []);
 
     const handleAuthAction = () => {
         if (user) {
@@ -232,6 +233,7 @@ export default function Layout({ children, currentPageName }) {
     </ThemeProvider>
   );
 }
+
 
 
 
