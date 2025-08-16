@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { LogOut, User as UserIcon, Repeat } from "lucide-react";
 
+const AUTH_DISABLED = true; // TEMP: bypass auth to verify UI renders
 const UserAvatar = ({ user, size = "40px" }) => {
   const getInitials = () => {
     if (user?.full_name) {
@@ -44,13 +45,23 @@ const LandingHeader = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-    if (AUTH_DISABLED) return;
-    if (isLandingSitePage || ["CustomLogin", "Onboarding"].includes(currentPageName)) {
-        setAuthStatus("public");
-        setIsLoading(false);
-        return;
-    }
-    User.me().then(setUser).catch(() => setUser(null)).finally(() => setIsLoading(false));
+  // TEMP short-circuit while we verify UI (remove this soon)
+  if (AUTH_DISABLED) { 
+    setAuthStatus("public"); 
+    setIsLoading(false); 
+    return; 
+  }
+
+  if (isLandingSitePage || ["CustomLogin", "Onboarding"].includes(currentPageName)) {
+    setAuthStatus("public");
+    setIsLoading(false);
+    return;
+  }
+
+  User.me()
+    .then(setUser)
+    .catch(() => setUser(null))
+    .finally(() => setIsLoading(false));
 }, []);
 
     const handleAuthAction = () => {
@@ -238,6 +249,11 @@ export default function Layout({ children, currentPageName }) {
     </ThemeProvider>
   );
 }
+
+
+
+
+
 
 
 
