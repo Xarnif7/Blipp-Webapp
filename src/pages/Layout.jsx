@@ -5,7 +5,7 @@ import { useLocation, useNavigate, Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { User, Business } from "@/api/entities";
 import { motion, AnimatePresence } from "framer-motion";
-import ModernSidebar from "../components/dashboard/ModernSidebar";
+import ModernSidebar from ".@/components/dashboard/ModernSidebar";
 import ModernTopNav from "../components/dashboard/ModernTopNav";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { DashboardProvider } from "@/components/providers/DashboardProvider";
